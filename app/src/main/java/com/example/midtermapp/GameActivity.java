@@ -34,7 +34,7 @@ public class GameActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        
+
         setContentView(R.layout.activity_game);
         btnAdd = findViewById(R.id.addValue);
         btnSubtract = findViewById(R.id.subtractValue);
@@ -42,7 +42,7 @@ public class GameActivity extends AppCompatActivity {
         btnSubmit = findViewById(R.id.guessSubmitButton);
         numberOfAttemptDisplay = findViewById(R.id.numberOfAttemptDisplay);
         stringUserInputNumber = numberInput.getText().toString();
-        userInputNumber = Integer.valueOf(stringCountUserNumber);
+        userInputNumber = Integer.parseInt(stringCountUserNumber);
         MediaPlayer mediaPlayer = MediaPlayer.create(GameActivity.this, R.raw.buzzer_alarm);
 
         btnAdd.setOnClickListener(new View.OnClickListener() {
