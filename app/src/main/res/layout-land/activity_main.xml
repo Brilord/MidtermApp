@@ -19,22 +19,28 @@
             android:layout_height="474dp"
             android:text="Welcome to the Game"
             android:textColor="@color/black"
-            android:textSize="30dp"/>
+            android:textSize="30dp" />
 
     </LinearLayout>
 
-    <Button
-        android:id="@+id/btnPlayGame"
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="86dp"
-        android:text="Play Game"
-        android:layout_margin="10dp"/>
+        android:layout_height="match_parent"
+        android:orientation="horizontal">
 
-    <Button
-        android:id="@+id/btnViewHighScore"
-        android:layout_width="match_parent"
-        android:layout_height="107dp"
-        android:text="View High Score"
-        android:layout_margin="10dp"/>
+        <Button
+            android:id="@+id/btnPlayGame"
+            android:layout_width="354dp"
+            android:layout_height="139dp"
+            android:layout_margin="10dp"
+            android:text="Play Game" />
+
+        <Button
+            android:id="@+id/btnViewHighScore"
+            android:layout_width="match_parent"
+            android:layout_height="134dp"
+            android:layout_margin="10dp"
+            android:text="View High Score" />
+    </LinearLayout>
 
 </LinearLayout>
