@@ -13,6 +13,9 @@ import android.widget.ImageButton;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.midtermapp.database.AppDatabase;
+import com.example.midtermapp.database.User;
+
 import java.io.FileInputStream;
 import java.util.Random;
 
@@ -42,7 +45,7 @@ public class GameActivity extends AppCompatActivity {
         btnSubmit = findViewById(R.id.guessSubmitButton);
         numberOfAttemptDisplay = findViewById(R.id.numberOfAttemptDisplay);
         stringUserInputNumber = numberInput.getText().toString();
-        userInputNumber = Integer.parseInt(stringCountUserNumber);
+        //userInputNumber = Integer.parseInt(stringCountUserNumber);
         MediaPlayer mediaPlayer = MediaPlayer.create(GameActivity.this, R.raw.buzzer_alarm);
 
         btnAdd.setOnClickListener(new View.OnClickListener() {
@@ -95,5 +98,16 @@ public class GameActivity extends AppCompatActivity {
                 }
             }
         });
+    }
+
+    private void savePlayerScore(String name, String score) {
+        AppDatabase db = AppDatabase.getDbInstance(this.getApplicationContext());
+        User user = new User();
+        user.name = name;
+        user.score = score;
+        db.userDao().insertAll(user);
+
+
+
     }
 }
