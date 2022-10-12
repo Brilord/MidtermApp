@@ -8,7 +8,7 @@ package com.example.midtermapp.database;
 //import com.example.midtermapp.database.User;
 //
 //import java.util.List;
-
+//
 //@Dao
 //public interface UserDao {
 //    @Query("SELECT * FROM user")
