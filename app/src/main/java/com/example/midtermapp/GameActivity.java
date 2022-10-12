@@ -100,14 +100,14 @@ public class GameActivity extends AppCompatActivity {
         });
     }
 
-    private void savePlayerScore(String name, String score) {
-        AppDatabase db = AppDatabase.getDbInstance(this.getApplicationContext());
-        User user = new User();
-        user.name = name;
-        user.score = score;
-        db.userDao().insertAll(user);
-
-
-
-    }
+//    private void savePlayerScore(String name, String score) {
+//        AppDatabase db = AppDatabase.getDbInstance(this.getApplicationContext());
+//        User user = new User();
+//        user.name = name;
+//        user.score = score;
+//        db.userDao().insertAll(user);
+//
+//
+//
+//    }
 }

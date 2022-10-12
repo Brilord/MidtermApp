@@ -2,6 +2,7 @@ package com.example.midtermapp;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.database.Cursor;
 import android.os.Bundle;
 import android.widget.ListView;
 import android.widget.SimpleCursorAdapter;
@@ -25,5 +26,9 @@ public class HighScoreActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_high_score);
+        dbManager = new DBManager(this);
+        dbManager.open();
+        Cursor cursor = dbManager.fetch();
+        listView = findViewById()
     }
 }
