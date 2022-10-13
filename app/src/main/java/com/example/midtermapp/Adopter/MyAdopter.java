@@ -16,31 +16,39 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class MyAdopter extends RecyclerView.Adapter<MyAdopter.MyViewHolder> {
-    private ArrayList<User> usersList;
+    private ArrayList<String> usersList;
+    public TextView textView;
 
-    public MyAdopter(ArrayList<User> usersList) {
+    public MyAdopter(ArrayList<String> usersList) {
         this.usersList = usersList;
     }
 
     public class MyViewHolder extends RecyclerView.ViewHolder {
-        private TextView nameText;
+        private TextView textView;
 
 
-        public MyViewHolder(@NonNull View itemView) {
-            super(itemView);
-            nameText = itemView.findViewById(R.id.highscore_list);
+        public MyViewHolder(View view) {
+            super(view);
+            textView = view.findViewById(R.id.highscore_list);
         }
     }
+
+    public TextView getTextView() {
+        return textView;
+    }
+
     @NonNull
     @Override
     public MyAdopter.MyViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View itemView = LayoutInflater.from(parent.getContext()).inflate(R.layout.activity_high_score, parent, false);
+        View itemView =
+                LayoutInflater.from(parent.getContext()).inflate(R.layout.score_board_view, parent, false);
         return new MyViewHolder(itemView);
     }
 
     @Override
-    public void onBindViewHolder(@NonNull MyAdopter.MyViewHolder holder, int position) {
-        String name = usersList.get(position).getUsername();
+    public void onBindViewHolder(@NonNull MyAdopter.MyViewHolder viewHolder, int position) {
+        //String name = usersList.get(position).getUsername();
+        viewHolder.textView.setText(usersList.get(position));
     }
 
     @Override
