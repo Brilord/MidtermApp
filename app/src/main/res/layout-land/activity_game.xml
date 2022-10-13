@@ -4,12 +4,11 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
-    android:orientation="vertical"
     tools:context=".GameActivity">
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="353dp"
+        android:layout_height="match_parent"
         android:orientation="vertical">
 
         <LinearLayout
@@ -45,8 +44,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="61dp"
                 android:text="Enter your guess: "
-                android:textSize="32sp"
-                android:textColor="@color/black"/>
+                android:textColor="@color/black"
+                android:textSize="32sp" />
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -58,8 +57,8 @@
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
-                    app:srcCompat="@drawable/ic_minus"
-                    android:text="" />
+                    android:text=""
+                    app:srcCompat="@drawable/ic_minus" />
 
                 <EditText
                     android:id="@+id/numberInput"
@@ -68,15 +67,15 @@
                     android:layout_weight="1"
                     android:ems="10"
                     android:inputType="number"
-                    android:text=""/>
+                    android:text="" />
 
                 <ImageButton
                     android:id="@+id/addValue"
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
-                    app:srcCompat="@drawable/ic_plus"
-                    android:text=""/>
+                    android:text=""
+                    app:srcCompat="@drawable/ic_plus" />
 
             </LinearLayout>
 
@@ -92,8 +91,8 @@
     </LinearLayout>
 
     <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="370dp"
+        android:layout_width="312dp"
+        android:layout_height="match_parent"
         android:orientation="vertical">
 
         <TextView
