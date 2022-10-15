@@ -29,22 +29,20 @@ public class MainActivity extends AppCompatActivity {
         btnStartGame = findViewById(R.id.btnPlayGame);
         btnShowHighScore = findViewById(R.id.btnViewHighScore);
         //displayMainActivity.setText("Welcome to the Game");
-        Intent extras = getIntent();
+        Bundle extras = getIntent().getExtras();
         if (extras != null) {
             Log.d("debug", "successfully implemented Intent");
-            playerScore = extras.getStringExtra("score");
-            playerName = extras.getStringExtra("name");
-            displayMainActivity.setText("");
+            playerScore = extras.getString("score");
+            playerName = extras.getString("name");
+            //displayMainActivity.setText("");
             //displayMainActivity.setText(sb.append(playerName).append(" score: ").append(playerScore).append("Play Another Game? "));
-            displayMainActivity.setText("" + playerName + " score: " + playerScore + "Play Another Game? ");
+            displayMainActivity.setText("" + playerName + " score: " + playerScore + " Play Another Game? ");
         }
 
-        if (didUserPlayGame == false) {
+        if (extras == null) {
             displayMainActivity.setText("Welcome to the Game");
         }
-        if (didUserPlayGame) {
 
-        }
 
         btnStartGame.setOnClickListener(new View.OnClickListener() {
             @Override
