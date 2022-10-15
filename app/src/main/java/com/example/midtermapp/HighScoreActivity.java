@@ -20,6 +20,7 @@ public class HighScoreActivity extends AppCompatActivity {
     RecyclerView recyclerView;
     CustomAdapter customAdapter;
     ArrayList<String> data = new ArrayList<>();
+
     //FeedReaderDbHelper dbHelper;
     TextView highscore_list;
     //int x = 0;
@@ -35,7 +36,7 @@ public class HighScoreActivity extends AppCompatActivity {
         for(int i = 0; i < 5; i++ ) {
             data.add("people " + i);
         }
-        customAdapter = new CustomAdapter(data);
+        customAdapter = new CustomAdapter(this);
 
         recyclerView.setLayoutManager(new LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false));
         recyclerView.setAdapter(customAdapter);
