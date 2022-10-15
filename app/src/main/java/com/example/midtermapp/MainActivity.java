@@ -81,19 +81,19 @@ public class MainActivity extends AppCompatActivity {
 //        super.onResume();
 //    }
 
-    protected void onSavedInstanceState(Bundle outState) {
-        super.onSaveInstanceState(outState);
-        outState.putString("player_name",playerName);
-        outState.putString("player_score", playerScore);
-        outState.putBoolean("did_player_play", didUserPlayGame);
-    }
-
-    protected void onRestoreInstanceState(Bundle savedInstanceState) {
-        super.onRestoreInstanceState(savedInstanceState);
-        playerName = savedInstanceState.getString("player_name", "");
-        playerScore = savedInstanceState.getString("player_score", "");
-        didUserPlayGame = savedInstanceState.getBoolean("did_player_play");
-
-
-    }
+//    protected void onSavedInstanceState(Bundle outState) {
+//        super.onSaveInstanceState(outState);
+//        outState.putString("player_name",playerName);
+//        outState.putString("player_score", playerScore);
+//        outState.putBoolean("did_player_play", didUserPlayGame);
+//    }
+//
+//    protected void onRestoreInstanceState(Bundle savedInstanceState) {
+//        super.onRestoreInstanceState(savedInstanceState);
+//        playerName = savedInstanceState.getString("player_name", "");
+//        playerScore = savedInstanceState.getString("player_score", "");
+//        didUserPlayGame = savedInstanceState.getBoolean("did_player_play");
+//
+//
+//    }
 }
