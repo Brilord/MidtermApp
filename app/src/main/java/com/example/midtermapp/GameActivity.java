@@ -1,9 +1,14 @@
 package com.example.midtermapp;
 
+//import static com.example.midtermapp.FeedReaderContract.FeedEntry.TABLE_NAME;
+
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.ContentValues;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.content.res.AssetManager;
+import android.database.sqlite.SQLiteDatabase;
 import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.util.Log;
@@ -35,6 +40,7 @@ public class GameActivity extends AppCompatActivity {
     StringBuilder sb = new StringBuilder();
     boolean isRandomNumberCreated = false;
     String stringPlayerNameInput = "";
+    //FeedReaderDbHelper dbHelper;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -88,10 +94,11 @@ public class GameActivity extends AppCompatActivity {
                 userInputNumber = Integer.parseInt(stringUserInputNumber);
                 if(userInputNumber == keyNumber) {
                     countUserAttempt++;
-
                     Intent sendToMainActivity = new Intent(GameActivity.this, MainActivity.class);
                     stringCountUserNumber = String.valueOf(countUserAttempt);
                     stringPlayerNameInput = playerNameInput.getText().toString();
+
+
                     sendToMainActivity.putExtra("score", stringCountUserNumber);
                     sendToMainActivity.putExtra("name", stringPlayerNameInput);
                     startActivity(sendToMainActivity);
@@ -130,3 +137,11 @@ public class GameActivity extends AppCompatActivity {
 //
 //    }
 }
+//                        SQLiteDatabase db = dbHelper.getWritableDatabase();
+//// Create a new map of values, where column names are the keys
+//                        ContentValues values = new ContentValues();
+//                        values.put(FeedReaderContract.FeedEntry.COLUMN_NAME_TITLE, playerNameInput.getText().toString());
+//                        values.put(FeedReaderContract.FeedEntry.COLUMN_NAME_SUBTITLE, countUserAttempt);
+//
+//// Insert the new row, returning the primary key value of the new row
+//                        long newRowId = db.insert(TABLE_NAME, null, values);
