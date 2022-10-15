@@ -8,7 +8,7 @@ import android.os.Bundle;
 
 //import com.example.midtermapp.Adopter.CustomAdapter;
 //import com.example.midtermapp.sqlDB.DBManager;
-import com.example.midtermapp.Adopter.MyAdopter;
+
 
 //import com.example.midtermapp.sqlDB.DatabaseHelper;
 
@@ -16,11 +16,12 @@ import java.util.ArrayList;
 
 public class HighScoreActivity extends AppCompatActivity {
 
-    MyAdopter adopter;
+    //NotesAdapter adopter;
     RecyclerView recyclerView;
     //CustomAdapter customAdopter;
-
-    ArrayList<String> highScoreList;
+    //MyAdopter adopter;
+    String[] data1;
+    ArrayList highScoreList;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -31,16 +32,27 @@ public class HighScoreActivity extends AppCompatActivity {
         highScoreList = new ArrayList<>();
 
         // set the RecyclerView
-        setUserInfo();
-        setAdopter();
+        //setUserInfo();
+        highScoreList.add("john");
+        highScoreList.add("hello");
+
+        //setAdopter();
+        MyAdopter adopter = new MyAdopter(data1);
+        //adopter = new MyAdopter(data1);
+        //RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(this);
+        recyclerView.setAdapter(adopter);
+        recyclerView.setLayoutManager(new LinearLayoutManager(HighScoreActivity.this, LinearLayoutManager.VERTICAL, false));
+        //recyclerView.setAdapter(adopter);
 
     }
 
     private void setAdopter() {
-        adopter = new MyAdopter(highScoreList);
-        //RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(getApplicationContext());
-        recyclerView.setLayoutManager(new LinearLayoutManager(HighScoreActivity.this, LinearLayoutManager.VERTICAL, false));
+        //adopter = new MyAdopter(highScoreList);
+        MyAdopter adopter = new MyAdopter(data1);
+       //RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(getApplicationContext());
         recyclerView.setAdapter(adopter);
+        recyclerView.setLayoutManager(new LinearLayoutManager(HighScoreActivity.this, LinearLayoutManager.VERTICAL, false));
+        //recyclerView.setAdapter(adopter);
     }
     private void setUserInfo() {
         highScoreList.add("john");

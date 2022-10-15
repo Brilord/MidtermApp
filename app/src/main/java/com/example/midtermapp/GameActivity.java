@@ -22,7 +22,8 @@ import java.util.Random;
 
 public class GameActivity extends AppCompatActivity {
     ImageButton btnAdd, btnSubtract;
-    EditText numberInput, playerNameInput;
+    EditText numberInput;
+    EditText playerNameInput;
     TextView numberOfAttemptDisplay;
     Button btnSubmit;
     Random rand = new Random();
@@ -34,8 +35,6 @@ public class GameActivity extends AppCompatActivity {
     StringBuilder sb = new StringBuilder();
     boolean isRandomNumberCreated = false;
     String stringPlayerNameInput = "";
-
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -51,13 +50,15 @@ public class GameActivity extends AppCompatActivity {
         playerNameInput = findViewById(R.id.playerNameInput);
         //userInputNumber = Integer.parseInt(stringCountUserNumber);
         MediaPlayer mediaPlayer = MediaPlayer.create(GameActivity.this, R.raw.buzzer_alarm);
+        //numberInput.setText(0);
         numberOfAttemptDisplay.setText("Number of attempts: 0");
+
 
         btnAdd.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 stringUserInputNumber = numberInput.getText().toString();
-                userInputNumber = Integer.valueOf(stringUserInputNumber);
+                userInputNumber = Integer.parseInt(stringUserInputNumber);
                 userInputNumber++;
                 stringUserInputNumber = String.valueOf(userInputNumber);
                 numberInput.setText(stringUserInputNumber);
@@ -67,7 +68,7 @@ public class GameActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 stringUserInputNumber = numberInput.getText().toString();
-                userInputNumber = Integer.valueOf(stringUserInputNumber);
+                userInputNumber = Integer.parseInt(stringUserInputNumber);
                 userInputNumber--;
                 stringUserInputNumber = String.valueOf(userInputNumber);
                 numberInput.setText(stringUserInputNumber);
@@ -78,13 +79,13 @@ public class GameActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 if(isRandomNumberCreated == false) {
-                    keyNumber = rand.nextInt(100);
+                    //keyNumber = rand.nextInt(100);
+                    keyNumber = 22;
                     isRandomNumberCreated = true;
-
 
                 }
                 stringUserInputNumber = numberInput.getText().toString();
-                userInputNumber = Integer.valueOf(stringUserInputNumber);
+                userInputNumber = Integer.parseInt(stringUserInputNumber);
                 if(userInputNumber == keyNumber) {
                     countUserAttempt++;
 
@@ -93,7 +94,7 @@ public class GameActivity extends AppCompatActivity {
                     stringPlayerNameInput = playerNameInput.getText().toString();
                     sendToMainActivity.putExtra("score", stringCountUserNumber);
                     sendToMainActivity.putExtra("name", stringPlayerNameInput);
-                    finish();
+                    startActivity(sendToMainActivity);
 
                 }
                 if(userInputNumber < keyNumber) {
@@ -112,7 +113,6 @@ public class GameActivity extends AppCompatActivity {
                     numberOfAttemptDisplay.setText("");
                     //numberOfAttemptDisplay.setText(sb.append("Number of attempts: ").append(countUserAttempt));
                     numberOfAttemptDisplay.setText("Number of attempts: " + countUserAttempt);
-
                     mediaPlayer.start();
                 }
             }
