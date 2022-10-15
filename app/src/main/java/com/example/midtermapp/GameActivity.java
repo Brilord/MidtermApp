@@ -97,8 +97,8 @@ public class GameActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 if (isRandomNumberCreated == false) {
-                    //keyNumber = rand.nextInt(100);
-                    keyNumber = 22;
+                    keyNumber = rand.nextInt(100);
+                    //keyNumber = 22;
                     isRandomNumberCreated = true;
                 }
                 stringUserInputNumber = numberInput.getText().toString();
@@ -117,8 +117,8 @@ public class GameActivity extends AppCompatActivity {
                         @Override
                         public void run() {
                                 mDb.personDao().insertPerson(person);
-                            finish();
-                            //startActivity(sendToMainActivity);
+
+                            startActivity(sendToMainActivity);
                         }
                     });
 

@@ -53,14 +53,7 @@ public class CustomAdapter extends RecyclerView.Adapter<CustomAdapter.ViewHolder
     }
 
 
-    // Create new views (invoked by the layout manager)
-//    @Override
-//    public ViewHolder onCreateViewHolder(ViewGroup viewGroup, int viewType) {
-//        View view = LayoutInflater.from(viewGroup.getContext())
-//                .inflate(R.layout.score_board_card, viewGroup, false);
-//
-//        return new ViewHolder(view);
-//    }
+
     @NonNull
     @Override
     public ViewHolder onCreateViewHolder(@NonNull ViewGroup viewGroup, int i) {

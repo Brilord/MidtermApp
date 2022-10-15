@@ -36,11 +36,13 @@ public class MainActivity extends AppCompatActivity {
             playerName = extras.getString("name");
             //displayMainActivity.setText("");
             //displayMainActivity.setText(sb.append(playerName).append(" score: ").append(playerScore).append("Play Another Game? "));
-            displayMainActivity.setText("" + playerName + " score: " + playerScore + " Play Another Game? ");
+            //displayMainActivity.setText("" + playerName + " score: " + playerScore + " Play Another Game? ");
         }
 
         if (extras == null) {
             displayMainActivity.setText("Welcome to the Game");
+        } else {
+            displayMainActivity.setText("" + playerName + " score: " + playerScore + " Play Another Game? ");
         }
 
 
