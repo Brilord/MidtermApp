@@ -36,11 +36,13 @@ public class MainActivity extends AppCompatActivity {
             playerName = extras.getString("name");
             //displayMainActivity.setText("");
             //displayMainActivity.setText(sb.append(playerName).append(" score: ").append(playerScore).append("Play Another Game? "));
-            displayMainActivity.setText("" + playerName + " score: " + playerScore + " Play Another Game? ");
+            //displayMainActivity.setText("" + playerName + " score: " + playerScore + " Play Another Game? ");
         }
 
         if (extras == null) {
             displayMainActivity.setText("Welcome to the Game");
+        } else {
+            displayMainActivity.setText("" + playerName + " score: " + playerScore + " Play Another Game? ");
         }
 
 
@@ -81,19 +83,19 @@ public class MainActivity extends AppCompatActivity {
 //        super.onResume();
 //    }
 
-    protected void onSavedInstanceState(Bundle outState) {
-        super.onSaveInstanceState(outState);
-        outState.putString("player_name",playerName);
-        outState.putString("player_score", playerScore);
-        outState.putBoolean("did_player_play", didUserPlayGame);
-    }
-
-    protected void onRestoreInstanceState(Bundle savedInstanceState) {
-        super.onRestoreInstanceState(savedInstanceState);
-        playerName = savedInstanceState.getString("player_name", "");
-        playerScore = savedInstanceState.getString("player_score", "");
-        didUserPlayGame = savedInstanceState.getBoolean("did_player_play");
-
-
-    }
+//    protected void onSavedInstanceState(Bundle outState) {
+//        super.onSaveInstanceState(outState);
+//        outState.putString("player_name",playerName);
+//        outState.putString("player_score", playerScore);
+//        outState.putBoolean("did_player_play", didUserPlayGame);
+//    }
+//
+//    protected void onRestoreInstanceState(Bundle savedInstanceState) {
+//        super.onRestoreInstanceState(savedInstanceState);
+//        playerName = savedInstanceState.getString("player_name", "");
+//        playerScore = savedInstanceState.getString("player_score", "");
+//        didUserPlayGame = savedInstanceState.getBoolean("did_player_play");
+//
+//
+//    }
 }
