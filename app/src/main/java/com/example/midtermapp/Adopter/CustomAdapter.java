@@ -20,7 +20,7 @@ import java.util.List;
 
 public class CustomAdapter extends RecyclerView.Adapter<CustomAdapter.ViewHolder> {
     static Context context;
-    //private ArrayList<String> localDataSet;
+
     private List<Person> mPersonList;
 
 
